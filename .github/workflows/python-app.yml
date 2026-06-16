@@ -36,6 +36,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
+        cat > checkin.py << 'EOF'
         import http.client
 
         conn = http.client.HTTPSConnection("glados.cloud")
@@ -59,3 +60,4 @@ jobs:
         res = conn.getresponse()
         data = res.read()
         print(data.decode("utf-8"))
+        EOF
