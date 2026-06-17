@@ -6,6 +6,7 @@ name: Python application
 on:
   schedule:
     - cron: "30 7 * * *"
+      timezone: "Asia/Shanghai"
   # 可选：手动点运行测试
   workflow_dispatch:
 
